@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 30px;
+    }
+  </style>
+  <link rel="stylesheet" href="./core/table/index.css">
+  <link rel="stylesheet" href="./core/checkbox/index.css">
+  <link rel="stylesheet" href="./core/switch/index.css">
+  <link rel="stylesheet" href="./core/row/index.css">
+  <link rel="stylesheet" href="./core/head/index.css">
+</head>
+<body>
+  <div id="table-form">
+    <table-form :data="list" :columns="columns"></table-form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script type="module">
+    import tableForm from './core/index.js';
+    new Vue({
+      el: '#table-form',
+      data: {
+        // checkbox limit a one
+        columns: [{
+          type: 'checkbox',
+          event: function checkEvent (selects) {
+            console.log(selects);
+          }
+        },
+        {
+          title: '姓名',
+          key: 'name'
+        },
+        {
+          title: '年龄',
+          key: 'age'
+        },
+        {
+          title: '性别',
+          key: 'sex'
+        },
+        {
+          title: '国籍',
+          key: 'country'
+        },
+        {
+          title: '授权',
+          key: 'select',
+          type: 'switch'
+        }],
+        list: [{
+          name: 'Reming',
+          age: 23,
+          sex: '男',
+          country: '中国'
+        },
+        {
+          name: 'Reming',
+          age: 23,
+          sex: '男',
+          country: '中国'
+        },
+        {
+          name: 'Reming',
+          age: 23,
+          sex: '男',
+          country: '中国'
+        },
+        {
+          name: 'Reming',
+          age: 23,
+          sex: '男',
+          country: '中国'
+        },
+        {
+          name: 'Reming',
+          age: 23,
+          sex: '男',
+          country: '中国'
+        }]
+      },
+      components: {
+        tableForm
+      }
+    })
+  </script>
+</body>
+</html>

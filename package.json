@@ -1,0 +1,63 @@
+{
+  "name": "atom-design",
+  "version": "1.4.7",
+  "description": "Mobile side UI-library base on Vue.js",
+  "main": "bundle/index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint ./packages",
+    "build": "webpack --mode production",
+    "uglify:dir": "babel packages --out-dir lib",
+    "babel": "babel packages --out-dir lib_unuglify",
+    "postcss": "postcss packages/**/*.css --base packages --dir lib"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "Firefox ESR",
+    "> 1%",
+    "ie > 8",
+    "iOS >= 7",
+    "Android >= 4.4"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reming0227/vue-table-form.git"
+  },
+  "keywords": [
+    "vue-table-form",
+    "vue-table",
+    "table",
+    "form",
+    "table-form"
+  ],
+  "author": "Reming",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reming0227/vue-table-form/issues"
+  },
+  "homepage": "https://github.com/reming0227/vue-table-form#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "autoprefixer": "^9.1.5",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "clean-webpack-plugin": "^2.0.1",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.8.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss": "^7.0.17",
+    "postcss-cli": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "precss": "^3.1.2",
+    "vue": "^2.6.10",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2"
+  }
+}

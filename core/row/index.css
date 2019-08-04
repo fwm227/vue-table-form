@@ -1,0 +1,7 @@
+.table-row {
+  border: 1px solid #ccc;
+  font-size: 13px;
+}
+.table-row .table-cell {
+  padding: 10px 20px;
+}

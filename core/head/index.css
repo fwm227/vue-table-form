@@ -1,0 +1,10 @@
+.table-head {
+  font-size: 13px;
+}
+.table-head-cell {
+  padding: 10px 20px;
+  height: 20px;
+}
+.table-head-cell > * {
+  vertical-align: middle;
+}
