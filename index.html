@@ -21,7 +21,7 @@
 </head>
 <body>
   <div id="table-form">
-    <table-form :data="list" :columns="columns"></table-form>
+    <table-form :data="list" :columns="columns" :select_event="event"></table-form>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script type="module">
@@ -29,13 +29,7 @@
     new Vue({
       el: '#table-form',
       data: {
-        // checkbox limit a one
-        columns: [{
-          type: 'checkbox',
-          event: function checkEvent (selects) {
-            console.log(selects);
-          }
-        },
+        columns: [
         {
           title: '姓名',
           key: 'name'
@@ -55,7 +49,10 @@
         {
           title: '授权',
           key: 'select',
-          type: 'switch'
+          type: 'switch',
+          event: function (state, row) {
+            console.log(state, row);
+          }
         }],
         list: [{
           name: 'Reming',
@@ -90,6 +87,11 @@
       },
       components: {
         tableForm
+      },
+      methods: {
+        event (selects) {
+          console.log(selects);
+        }
       }
     })
   </script>

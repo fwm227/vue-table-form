@@ -2,30 +2,12 @@ import tableSwitch from '../switch/index.js';
 import tableCheckbox from '../checkbox/index.js';
 import Store from '../store/index.js';
 
-var colEventMsg = Store.getState('colEventMsg');
-
 export default {
   name: 'table-row',
   data () {
     return {
       checkbox_val: false,
       switch_val: false
-    }
-  },
-  mounted () {
-    var self = this;
-    // register react-props for update view
-    Object.defineProperty(Store.state, 'colEventMsg', {
-      get () {
-        return colEventMsg;
-      },
-      set (msg) {
-        self.$forceUpdate();
-      }
-    });
-  },
-  watch: {
-    checkbox_val: function (state) {
     }
   },
   props: {
@@ -54,7 +36,6 @@ export default {
     var self = this;
     var tableCells = [];
     var types = Store.getState('types');
-    var colEventMsg = Store.getState('colEventMsg');
     Store.getState('keys').forEach(function (key, colIdx) {
       switch (types[colIdx]) {
         case 'text':
@@ -69,7 +50,7 @@ export default {
               on: {
                 change: function (state) {
                   self.checkbox_val = state;
-                  self.$emit('checkbox_change', colIdx, state, self.data);
+                  self.$emit('checkbox_change', state);
                 }
               }
             })
@@ -82,8 +63,8 @@ export default {
                 checked: self.switch_val
               },
               on: {
-                change: function (val) {
-                  
+                change: function (state) {
+                  Store.getState('switchEvents')[colIdx](state, self.data);
                 }
               }
             })

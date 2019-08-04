@@ -7,9 +7,10 @@ export default {
     data: [],
     keys: [],
     types: [],
-    events: [],
-    colEventMsg: [],
-    rowLength: null
+    selectMsg: null,
+    rowLength: null,
+    selectFn: null,
+    switchEvents: null
   },
   getState: function (key) {
     return this.state[key];
@@ -32,14 +33,20 @@ export default {
     setTypes: function (val) {
       this.state.types = val;
     },
-    setEvents: function (val) {
-      this.state.events = val;
+    setSelectMsg: function (msgs) {
+      var self = this;
+      if (!msgs) self.state.selectMsg = Array.apply(null, {length: self.getState('rowLength')});
+      else self.state.selectMsg = msgs;
     },
-    setEventMsg: function (colIdx, msgs) {
-      this.state.colEventMsg = this.state.colEventMsg.splice(colIdx, 1, msgs);
+    initSelectMsg: function () {
+      var self = this;
+      self.state.selectMsg = Array.apply(null, {length: self.getState('rowLength')});
     },
-    initEventMsg: function (colLen) {
-      this.state.colEventMsg = Array.apply(null, {length: colLen});
+    setSelectFn: function (fn) {
+      if (fn && typeof fn === 'function') this.state.selectFn = fn;
+    },
+    setSwitchEvents: function (events) {
+      this.state.switchEvents = events;
     }
   },
   commit: function (name, ...arg) {

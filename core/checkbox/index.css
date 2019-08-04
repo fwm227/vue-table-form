@@ -51,3 +51,14 @@
 .table-checkbox .checkbox-input[type=checkbox]:checked + .checkbox-label::after {
   transform: rotate3d(0, 0, 1, -45deg) scale(1);
 }
+.table-checkbox .zeroState-label {
+  position: relative;
+}
+.table-checkbox .zero-label::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: #108ee9;
+}

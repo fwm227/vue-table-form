@@ -6,7 +6,6 @@ export default {
         return this.value;
       },
       set (val) {
-        this.$emit('input', val);
         this.$emit('change', val);
       }
     }
@@ -18,6 +17,7 @@ export default {
     }
   },
   render (h) {
+    var self = this;
     return h('label', {staticClass: 'table-switch'}, [
       h('input', {
         staticClass: 'switch-input',
@@ -25,11 +25,11 @@ export default {
           type: 'checkbox'
         },
         domProps: {
-          checked: this.inner_value
+          checked: self.inner_value
         },
         on: {
           change: () => {
-            this.inner_value = event.target.checked;
+            self.inner_value = event.target.checked;
           }
         }
       }),

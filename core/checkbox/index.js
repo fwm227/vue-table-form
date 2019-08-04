@@ -14,6 +14,10 @@ export default {
     value: {
       type: Boolean,
       default: false
+    },
+    stateZero: {
+      type: Boolean,
+      default: false
     }
   },
   render (h) {
@@ -33,7 +37,8 @@ export default {
         }
       }),
       h('label', {
-        staticClass: 'checkbox-label'
+        staticClass: 'checkbox-label',
+        class: {'zero-label': self.stateZero}
       })
     ]);
   }

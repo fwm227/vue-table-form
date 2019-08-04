@@ -2,6 +2,13 @@ import Store from '../store/index.js';
 import tableCheckbox from '../checkbox/index.js';
 
 export default {
+  name: 'table-head',
+  props: {
+    selectState: {
+      type: Number,
+      default: -1
+    }
+  },
   components: {
     tableCheckbox
   },
@@ -14,13 +21,26 @@ export default {
         case 'checkbox':
             headCells.push(h('th', {staticClass: 'table-head-cell'}, [
               h('table-checkbox', {
+                attrs: {
+                  value: self.selectState === 1,
+                  stateZero: self.selectState === 0
+                },
                 on: {
                   change (state) {
-                    var msgs = Store.getState('data');
-                    Store.commit('setEventMsg', idx, msgs);
-                    self.$emit('selectAll', idx, state);
-                    if (state) Store.getState('events')[idx](msgs); 
-                    else Store.getState('events')[idx]([]); 
+                    var msgs = JSON.parse(JSON.stringify(Store.getState('data')));
+                    if (self.selectState === 0 && state) {
+                      self.$emit('selectAll', false);
+                      // fix uneffect full-select
+                      setTimeout(function () {self.$emit('selectAll', state)});
+                    } else self.$emit('selectAll', state);
+                    var selectFn = Store.getState('selectFn');
+                    if (state) {
+                      Store.commit('setSelectMsg', msgs);
+                      selectFn(msgs);
+                    } else {
+                      Store.commit('setSelectMsg', null);
+                      selectFn([]);
+                    } 
                   }
                 }
               })

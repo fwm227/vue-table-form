@@ -1,7 +1,7 @@
 {
-  "name": "atom-design",
-  "version": "1.4.7",
-  "description": "Mobile side UI-library base on Vue.js",
+  "name": "vue-table-form",
+  "version": "0.0.3",
+  "description": "The table plugin base on vue",
   "main": "bundle/index.js",
   "scripts": {
     "test": "jest",
