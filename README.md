@@ -2,7 +2,7 @@
 
 Mobile side UI-library base on Vue.js
 
-[![Build Status](https://travis-ci.org/reming0227/vue-table-form.svg?branch=master)](https://travis-ci.org/reming0227/vue-table-form) [![Version](https://img.shields.io/badge/npm-1.0.0-blue.svg)](https://www.npmjs.com/package/vue-table-form)
+[![Build Status](https://travis-ci.org/reming0227/vue-table-form.svg?branch=master)](https://travis-ci.org/reming0227/vue-table-form) [![Version](https://img.shields.io/badge/npm-1.0.1-blue.svg)](https://www.npmjs.com/package/vue-table-form)
 
 ## 📦 Installation
 

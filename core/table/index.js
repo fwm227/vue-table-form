@@ -3,10 +3,10 @@ import tableHead from '../head/index.js';
 import tableBody from '../body/index.js';
 
 export default {
-  name: 'table',
+  name: 'vue-table',
   data () {
     return {
-      selectState: false,
+      selectState: -1,
       allSelect: false
     };
   },
