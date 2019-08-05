@@ -13,19 +13,15 @@
       padding: 30px;
     }
   </style>
-  <link rel="stylesheet" href="./core/table/index.css">
-  <link rel="stylesheet" href="./core/checkbox/index.css">
-  <link rel="stylesheet" href="./core/switch/index.css">
-  <link rel="stylesheet" href="./core/row/index.css">
-  <link rel="stylesheet" href="./core/head/index.css">
+  <link rel="stylesheet" href="./lib/style.css">
 </head>
 <body>
   <div id="table-form">
-    <table-form :data="list" :columns="columns" :select_event="event"></table-form>
+    <vue-table :data="list" :columns="columns" :select_event="event"></vue-table>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script type="module">
-    import tableForm from './core/index.js';
+    import VueTable from './core/index.js';
     new Vue({
       el: '#table-form',
       data: {
@@ -86,7 +82,7 @@
         }]
       },
       components: {
-        tableForm
+        VueTable
       },
       methods: {
         event (selects) {

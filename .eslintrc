@@ -1,7 +1,7 @@
 {
   parser: 'babel-eslint',
   rules: {
-    'indent': ['warn', 2],
+    'indent': ['warn', 2, { "SwitchCase": 1 }],
     'semi':['warn','always']
   }
 }

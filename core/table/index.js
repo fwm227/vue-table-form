@@ -8,7 +8,7 @@ export default {
     return {
       selectState: false,
       allSelect: false
-    }
+    };
   },
   props: {
     data: {
@@ -69,7 +69,7 @@ export default {
       }),
       h('table-body', {
         attrs: {
-           allSelect: self.allSelect
+          allSelect: self.allSelect
         },
         on: {
           setSelectAllState (state) {
@@ -82,4 +82,4 @@ export default {
       })
     ]);
   }
-}
+};

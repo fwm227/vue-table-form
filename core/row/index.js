@@ -8,7 +8,7 @@ export default {
     return {
       checkbox_val: false,
       switch_val: false
-    }
+    };
   },
   props: {
     isHead: {
@@ -40,7 +40,7 @@ export default {
       switch (types[colIdx]) {
         case 'text':
           tableCells.push(h('td', {staticClass: 'table-cell'}, self.data[key]));
-        break;
+          break;
         case 'checkbox':
           tableCells.push(h('td', {staticClass: 'table-cell'}, [
             h('table-checkbox', {
@@ -55,7 +55,7 @@ export default {
               }
             })
           ]));
-        break;
+          break;
         case 'switch':
           tableCells.push(h('td', {staticClass: 'table-cell'}, [
             h('table-switch', {
@@ -69,11 +69,11 @@ export default {
               }
             })
           ]));
-        break;
+          break;
       }
     });
     return h('tr', {
       staticClass: 'table-row'
     }, tableCells);
   }
-}
+};

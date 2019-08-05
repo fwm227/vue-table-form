@@ -2,10 +2,10 @@
   "name": "vue-table-form",
   "version": "0.0.3",
   "description": "The table plugin base on vue",
-  "main": "bundle/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint ./packages",
+    "eslint": "eslint ./core",
     "build": "webpack --mode production",
     "uglify:dir": "babel packages --out-dir lib",
     "babel": "babel packages --out-dir lib_unuglify",

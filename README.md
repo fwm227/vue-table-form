@@ -13,71 +13,78 @@ yarn add vue-table-from
 
 ## 🔨 Usage
 ```html
-<vue-table :data="list" :columns="columns"></vue-table>
+<vue-table :data="list" :columns="columns" :select_event="event"></vue-table>
 ```
 
 ```javascript
 import VueTable from 'vue-table-from';
-data: {
-  // checkbox limit a one
-  columns: [{
-    type: 'checkbox',
-    event: function checkEvent (selects) {
+new Vue({
+  data: {
+    columns: [
+    {
+      title: '姓名',
+      key: 'name'
+    },
+    {
+      title: '年龄',
+      key: 'age'
+    },
+    {
+      title: '性别',
+      key: 'sex'
+    },
+    {
+      title: '国籍',
+      key: 'country'
+    },
+    {
+      title: '授权',
+      key: 'select',
+      type: 'switch',
+      event: function (state, row) {
+        console.log(state, row);
+      }
+    }],
+    list: [{
+      name: 'Reming',
+      age: 23,
+      sex: '男',
+      country: '中国'
+    },
+    {
+      name: 'Reming',
+      age: 23,
+      sex: '男',
+      country: '中国'
+    },
+    {
+      name: 'Reming',
+      age: 23,
+      sex: '男',
+      country: '中国'
+    },
+    {
+      name: 'Reming',
+      age: 23,
+      sex: '男',
+      country: '中国'
+    },
+    {
+      name: 'Reming',
+      age: 23,
+      sex: '男',
+      country: '中国'
+    }]
+  },
+  components: {
+    VueTable
+  },
+  methods: {
+    event (selects) {
       console.log(selects);
     }
-  },
-  {
-    title: '姓名',
-    key: 'name'
-  },
-  {
-    title: '年龄',
-    key: 'age'
-  },
-  {
-    title: '性别',
-    key: 'sex'
-  },
-  {
-    title: '国籍',
-    key: 'country'
-  },
-  {
-    title: '授权',
-    key: 'select',
-    type: 'switch'
-  }],
-  list: [{
-    name: 'Reming',
-    age: 23,
-    sex: '男',
-    country: '中国'
-  },
-  {
-    name: 'Reming',
-    age: 23,
-    sex: '男',
-    country: '中国'
-  },
-  {
-    name: 'Reming',
-    age: 23,
-    sex: '男',
-    country: '中国'
-  },
-  {
-    name: 'Reming',
-    age: 23,
-    sex: '男',
-    country: '中国'
-  },
-  {
-    name: 'Reming',
-    age: 23,
-    sex: '男',
-    country: '中国'
-  }]
-}
+  }
+})
 ```
 
 ## 📃 License

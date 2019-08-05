@@ -9,7 +9,7 @@ module.exports = {
    'index': './core/index.js'
   },
   output: {
-    path: path.resolve(__dirname, 'bundle'),
+    path: path.resolve(__dirname, 'lib'),
     filename: './[name].js',
     library: 'VueTable',
     libraryTarget: 'umd',
