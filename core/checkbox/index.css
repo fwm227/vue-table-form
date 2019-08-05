@@ -1,4 +1,5 @@
 .table-checkbox {
+  position: relative;
   display: inline-block;
   cursor: pointer;
 }
@@ -17,7 +18,7 @@
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
-.table-checkbox .checkbox-input[type=checkbox]:checked + .checkbox-label {
+.table-checkbox .checkbox-input[type=checkbox]:checked + .checkbox-label, .table-checkbox.zero-state .checkbox-label {
   border: none;
 }
 .table-checkbox .checkbox-input[type=checkbox] + .checkbox-label::before {
@@ -30,7 +31,7 @@
   opacity: 0;
   border-radius: 3px;
   background: #108ee9;
-  transition: opacity linear .3s;
+  transition: opacity linear .2s;
 }
 .table-checkbox .checkbox-input[type=checkbox]:checked + .checkbox-label::before {
   opacity: 1;
@@ -46,19 +47,36 @@
   border-top: none;
   border-right: none;
   transform: rotate3d(0, 0, 1, -45deg) scale(0);
-  transition: transform cubic-bezier(0,.35,1,1.92) 0.3s;
+  transition: transform cubic-bezier(0,.35,1,1.92) 0.2s;
 }
 .table-checkbox .checkbox-input[type=checkbox]:checked + .checkbox-label::after {
   transform: rotate3d(0, 0, 1, -45deg) scale(1);
 }
-.table-checkbox .zeroState-label {
-  position: relative;
+.table-checkbox.zero-state {
+  border: none;
 }
-.table-checkbox .zero-label::after {
+.table-checkbox.zero-state::before {
+  content: " ";
   position: absolute;
   top: 0;
   left: 0;
-  width: 10px;
-  height: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
   background: #108ee9;
+  transition: opacity linear .3s;
+}
+.table-checkbox::after {
+  content: " ";
+  position: absolute;
+  top: 6px;
+  left: 3px;
+  width: 10px;
+  height: 2px;
+  background: white;
+  transform: scale(0);
+  transition: transform cubic-bezier(0,.35,1,1.92) 0.2s;
+}
+.table-checkbox.zero-state::after {
+  transform: scale(1);
 }

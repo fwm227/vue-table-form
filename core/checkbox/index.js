@@ -21,24 +21,27 @@ export default {
     }
   },
   render (h) {
-    return h('label', {staticClass: 'table-checkbox'}, [
+    var self = this;
+    return h('label', {
+      staticClass: 'table-checkbox',
+      class: {'zero-state': self.stateZero}
+    }, [
       h('input', {
         staticClass: 'checkbox-input',
         attrs: {
           type: 'checkbox'
         },
         domProps: {
-          checked: this.inner_value
+          checked: self.inner_value
         },
         on: {
           change: () => {
-            this.inner_value = event.target.checked;
+            self.inner_value = event.target.checked;
           }
         }
       }),
       h('label', {
-        staticClass: 'checkbox-label',
-        class: {'zero-label': self.stateZero}
+        staticClass: 'checkbox-label'
       })
     ]);
   }

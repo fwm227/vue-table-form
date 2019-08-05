@@ -2,7 +2,7 @@
 
 Mobile side UI-library base on Vue.js
 
-[![Build Status](https://travis-ci.org/reming0227/vue-table-form.svg?branch=master)](https://travis-ci.org/reming0227/vue-table-form) [![Version](https://img.shields.io/badge/npm-0.0.3-blue.svg)](https://www.npmjs.com/package/vue-table-form)
+[![Build Status](https://travis-ci.org/reming0227/vue-table-form.svg?branch=master)](https://travis-ci.org/reming0227/vue-table-form) [![Version](https://img.shields.io/badge/npm-0.0.6-blue.svg)](https://www.npmjs.com/package/vue-table-form)
 
 ## 📦 Installation
 
@@ -22,23 +22,23 @@ new Vue({
   data: {
     columns: [
     {
-      title: '姓名',
+      title: 'Name',
       key: 'name'
     },
     {
-      title: '年龄',
+      title: 'Age',
       key: 'age'
     },
     {
-      title: '性别',
+      title: 'Sex',
       key: 'sex'
     },
     {
-      title: '国籍',
+      title: 'Contry',
       key: 'country'
     },
     {
-      title: '授权',
+      title: 'Authority',
       key: 'select',
       type: 'switch',
       event: function (state, row) {
@@ -47,33 +47,33 @@ new Vue({
     }],
     list: [{
       name: 'Reming',
-      age: 23,
+      age: 'xxx',
       sex: '男',
       country: '中国'
     },
     {
       name: 'Reming',
-      age: 23,
-      sex: '男',
-      country: '中国'
+      age: 'xxx',
+      sex: 'Male',
+      country: 'China'
     },
     {
       name: 'Reming',
-      age: 23,
-      sex: '男',
-      country: '中国'
+      age: 'xxx',
+      sex: 'Male',
+      country: 'China'
     },
     {
       name: 'Reming',
-      age: 23,
-      sex: '男',
-      country: '中国'
+      age: 'xxx',
+      sex: 'Male',
+      country: 'China'
     },
     {
       name: 'Reming',
-      age: 23,
-      sex: '男',
-      country: '中国'
+      age: 'xxx',
+      sex: 'Male',
+      country: 'China'
     }]
   },
   components: {
