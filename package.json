@@ -1,6 +1,6 @@
 {
   "name": "vue-table-form",
-  "version": "0.0.6",
+  "version": "1.0.0",
   "description": "The table plugin base on vue",
   "main": "lib/index.js",
   "scripts": {

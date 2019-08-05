@@ -4,10 +4,12 @@
 /.travis.yml
 /.babelrc
 /.eslintignore
-/.eslintrc.js
+/.eslintrc
 /.gitignore
 /.npmignore
 /core/
+/docs/
+/test/
 /postcss.config.js
 /webpack.config.js
 /jest.config.js
