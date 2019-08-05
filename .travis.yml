@@ -8,6 +8,3 @@ node_js:
 script:
   - npm run eslint
   - npm version patch
-
-deploy:
-  - npm publish
