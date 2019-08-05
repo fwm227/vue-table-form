@@ -7,8 +7,8 @@ Mobile side UI-library base on Vue.js
 ## 📦 Installation
 
 ```bash
-npm install vue-table-from --save
-yarn add vue-table-from
+npm install vue-table-form --save
+yarn add vue-table-form
 ```
 
 ## 🔨 Usage
@@ -17,7 +17,8 @@ yarn add vue-table-from
 ```
 
 ```javascript
-import VueTable from 'vue-table-from';
+import 'vue-table-form/lib/style.css';
+import VueTable from 'vue-table-form';
 new Vue(
   data: {
     columns: [
