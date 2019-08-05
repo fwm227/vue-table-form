@@ -14,6 +14,10 @@ export default {
     value: {
       type: Boolean,
       default: false
+    },
+    color: {
+      type: String,
+      default: '#108ee9'
     }
   },
   render (h) {
@@ -34,7 +38,10 @@ export default {
         }
       }),
       h('label', {
-        staticClass: 'switch-label'
+        staticClass: 'switch-label',
+        style: {
+          background: self.color
+        }
       })
     ]);
   }

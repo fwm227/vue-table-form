@@ -7,7 +7,7 @@ node_js:
 
 script:
   - npm run eslint
-
-after_success:
   - npm version patch
+
+deploy:
   - npm publish

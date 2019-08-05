@@ -15,7 +15,6 @@
   width: 45px;
   height: 25px;
   border-radius: 15px;
-  background: #108ee9;
 }
 .table-switch .switch-label::before, .table-switch .switch-label::after {
   content: " ";

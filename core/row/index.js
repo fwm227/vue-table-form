@@ -6,8 +6,7 @@ export default {
   name: 'table-row',
   data () {
     return {
-      checkbox_val: false,
-      switch_val: false
+      checkbox_val: false
     };
   },
   props: {
@@ -36,7 +35,9 @@ export default {
     var self = this;
     var tableCells = [];
     var types = Store.getState('types');
-    Store.getState('keys').forEach(function (key, colIdx) {
+    var keys = Store.getState('keys');
+    var rowDatas = Store.getState('data');
+    keys.forEach(function (key, colIdx) {
       switch (types[colIdx]) {
         case 'text':
           tableCells.push(h('td', {staticClass: 'table-cell'}, self.data[key]));
@@ -57,10 +58,12 @@ export default {
           ]));
           break;
         case 'switch':
+          var switchBtn = rowDatas[self.rowIdx].switch;
           tableCells.push(h('td', {staticClass: 'table-cell'}, [
             h('table-switch', {
-              domProps: {
-                checked: self.switch_val
+              attrs: {
+                value: switchBtn ? switchBtn.value : false,
+                color: switchBtn ? switchBtn.color : '#108ee9'
               },
               on: {
                 change: function (state) {

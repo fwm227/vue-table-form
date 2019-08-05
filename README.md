@@ -18,7 +18,7 @@ yarn add vue-table-from
 
 ```javascript
 import VueTable from 'vue-table-from';
-new Vue({
+new Vue(
   data: {
     columns: [
     {
@@ -46,34 +46,54 @@ new Vue({
       }
     }],
     list: [{
-      name: 'Reming',
-      age: 'xxx',
-      sex: '男',
-      country: '中国'
-    },
-    {
-      name: 'Reming',
+      name: 'Row',
       age: 'xxx',
       sex: 'Male',
-      country: 'China'
+      country: 'China',
+      switch: {
+        color: 'red',
+        value: true
+      }
     },
     {
-      name: 'Reming',
+      name: 'Row',
       age: 'xxx',
       sex: 'Male',
-      country: 'China'
+      country: 'China',
+      switch: {
+        color: 'purple',
+        value: false
+      }
     },
     {
-      name: 'Reming',
+      name: 'Row',
       age: 'xxx',
       sex: 'Male',
-      country: 'China'
+      country: 'China',
+      switch: {
+        color: 'yellow',
+        value: false
+      }
     },
     {
-      name: 'Reming',
+      name: 'Row',
       age: 'xxx',
       sex: 'Male',
-      country: 'China'
+      country: 'China',
+      switch: {
+        color: 'green',
+        value: false
+      }
+    },
+    {
+      name: 'Row',
+      age: 'xxx',
+      sex: 'Male',
+      country: 'China',
+      switch: {
+        color: '#108ee9',
+        value: true
+      }
     }]
   },
   components: {
@@ -86,6 +106,10 @@ new Vue({
   }
 })
 ```
+
+## 🎬 Preview
+
+[![]('./docs/vuetable.gif')]();
 
 ## 📃 License
 
