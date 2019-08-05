@@ -109,7 +109,7 @@ new Vue(
 
 ## 🎬 Preview
 
-[![]('./docs/vuetable.gif')]();
+[![]('https://github.com/reming0227/vue-table-form/blob/master/docs/vuetable.gif')]();
 
 ## 📃 License
 
